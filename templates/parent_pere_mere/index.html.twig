@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ParentPereMere index{% endblock %}
+
+{% block body %}
+    <h1>ParentPereMere index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name_p1</th>
+                <th>Prenom_p1</th>
+                <th>Email_p1</th>
+                <th>Telephone_p1</th>
+                <th>Name_p2</th>
+                <th>Prenom_p2</th>
+                <th>Email_p2</th>
+                <th>Telephone_p2</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for parent_pere_mere in parent_pere_meres %}
+            <tr>
+                <td>{{ parent_pere_mere.id }}</td>
+                <td>{{ parent_pere_mere.nameP1 }}</td>
+                <td>{{ parent_pere_mere.prenomP1 }}</td>
+                <td>{{ parent_pere_mere.emailP1 }}</td>
+                <td>{{ parent_pere_mere.telephoneP1 }}</td>
+                <td>{{ parent_pere_mere.nameP2 }}</td>
+                <td>{{ parent_pere_mere.prenomP2 }}</td>
+                <td>{{ parent_pere_mere.emailP2 }}</td>
+                <td>{{ parent_pere_mere.telephoneP2 }}</td>
+                <td>
+                    <a href="{{ path('parent_pere_mere_show', {'id': parent_pere_mere.id}) }}">show</a>
+                    <a href="{{ path('parent_pere_mere_edit', {'id': parent_pere_mere.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('parent_pere_mere_new') }}">Create new</a>
+{% endblock %}

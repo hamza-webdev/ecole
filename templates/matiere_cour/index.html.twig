@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MatiereCour index{% endblock %}
+
+{% block body %}
+    <h1>MatiereCour index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for matiere_cour in matiere_cours %}
+            <tr>
+                <td>{{ matiere_cour.id }}</td>
+                <td>{{ matiere_cour.title }}</td>
+                <td>{{ matiere_cour.description }}</td>
+                <td>{{ matiere_cour.date ? matiere_cour.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('matiere_cour_show', {'id': matiere_cour.id}) }}">show</a>
+                    <a href="{{ path('matiere_cour_edit', {'id': matiere_cour.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('matiere_cour_new') }}">Create new</a>
+{% endblock %}

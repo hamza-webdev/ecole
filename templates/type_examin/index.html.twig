@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeExamin index{% endblock %}
+
+{% block body %}
+    <h1>TypeExamin index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_examin in type_examins %}
+            <tr>
+                <td>{{ type_examin.id }}</td>
+                <td>{{ type_examin.title }}</td>
+                <td>
+                    <a href="{{ path('type_examin_show', {'id': type_examin.id}) }}">show</a>
+                    <a href="{{ path('type_examin_edit', {'id': type_examin.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_examin_new') }}">Create new</a>
+{% endblock %}

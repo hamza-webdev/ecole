@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TypeExamin{% endblock %}
+
+{% block body %}
+    <h1>Edit TypeExamin</h1>
+
+    {{ include('type_examin/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('type_examin_index') }}">back to list</a>
+
+    {{ include('type_examin/_delete_form.html.twig') }}
+{% endblock %}

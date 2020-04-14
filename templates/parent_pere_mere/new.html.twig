@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ParentPereMere{% endblock %}
+
+{% block body %}
+    <h1>Create new ParentPereMere</h1>
+
+    {{ include('parent_pere_mere/_form.html.twig') }}
+
+    <a href="{{ path('parent_pere_mere_index') }}">back to list</a>
+{% endblock %}

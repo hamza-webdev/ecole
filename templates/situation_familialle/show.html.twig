@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SituationFamilialle{% endblock %}
+
+{% block body %}
+    <h1>SituationFamilialle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ situation_familialle.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ situation_familialle.title }}</td>
+            </tr>
+            <tr>
+                <th>Classeroom</th>
+                <td>{{ situation_familialle.Classeroom }}</td>
+            </tr>
+            <tr>
+                <th>Desciption</th>
+                <td>{{ situation_familialle.desciption }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('situation_familialle_index') }}">back to list</a>
+
+    <a href="{{ path('situation_familialle_edit', {'id': situation_familialle.id}) }}">edit</a>
+
+    {{ include('situation_familialle/_delete_form.html.twig') }}
+{% endblock %}

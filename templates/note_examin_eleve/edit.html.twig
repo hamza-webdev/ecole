@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit NoteExaminEleve{% endblock %}
+
+{% block body %}
+    <h1>Edit NoteExaminEleve</h1>
+
+    {{ include('note_examin_eleve/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('note_examin_eleve_index') }}">back to list</a>
+
+    {{ include('note_examin_eleve/_delete_form.html.twig') }}
+{% endblock %}

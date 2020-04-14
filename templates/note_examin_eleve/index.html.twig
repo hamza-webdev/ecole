@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NoteExaminEleve index{% endblock %}
+
+{% block body %}
+    <h1>NoteExaminEleve index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Note</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for note_examin_eleve in note_examin_eleves %}
+            <tr>
+                <td>{{ note_examin_eleve.id }}</td>
+                <td>{{ note_examin_eleve.note }}</td>
+                <td>
+                    <a href="{{ path('note_examin_eleve_show', {'id': note_examin_eleve.id}) }}">show</a>
+                    <a href="{{ path('note_examin_eleve_edit', {'id': note_examin_eleve.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('note_examin_eleve_new') }}">Create new</a>
+{% endblock %}

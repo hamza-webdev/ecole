@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SituationFamilialle{% endblock %}
+
+{% block body %}
+    <h1>Create new SituationFamilialle</h1>
+
+    {{ include('situation_familialle/_form.html.twig') }}
+
+    <a href="{{ path('situation_familialle_index') }}">back to list</a>
+{% endblock %}

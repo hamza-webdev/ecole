@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ParentPereMere{% endblock %}
+
+{% block body %}
+    <h1>ParentPereMere</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ parent_pere_mere.id }}</td>
+            </tr>
+            <tr>
+                <th>Name_p1</th>
+                <td>{{ parent_pere_mere.nameP1 }}</td>
+            </tr>
+            <tr>
+                <th>Prenom_p1</th>
+                <td>{{ parent_pere_mere.prenomP1 }}</td>
+            </tr>
+            <tr>
+                <th>Email_p1</th>
+                <td>{{ parent_pere_mere.emailP1 }}</td>
+            </tr>
+            <tr>
+                <th>Telephone_p1</th>
+                <td>{{ parent_pere_mere.telephoneP1 }}</td>
+            </tr>
+            <tr>
+                <th>Name_p2</th>
+                <td>{{ parent_pere_mere.nameP2 }}</td>
+            </tr>
+            <tr>
+                <th>Prenom_p2</th>
+                <td>{{ parent_pere_mere.prenomP2 }}</td>
+            </tr>
+            <tr>
+                <th>Email_p2</th>
+                <td>{{ parent_pere_mere.emailP2 }}</td>
+            </tr>
+            <tr>
+                <th>Telephone_p2</th>
+                <td>{{ parent_pere_mere.telephoneP2 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('parent_pere_mere_index') }}">back to list</a>
+
+    <a href="{{ path('parent_pere_mere_edit', {'id': parent_pere_mere.id}) }}">edit</a>
+
+    {{ include('parent_pere_mere/_delete_form.html.twig') }}
+{% endblock %}

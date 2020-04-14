@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New NoteExaminEleve{% endblock %}
+
+{% block body %}
+    <h1>Create new NoteExaminEleve</h1>
+
+    {{ include('note_examin_eleve/_form.html.twig') }}
+
+    <a href="{{ path('note_examin_eleve_index') }}">back to list</a>
+{% endblock %}

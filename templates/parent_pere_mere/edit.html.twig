@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ParentPereMere{% endblock %}
+
+{% block body %}
+    <h1>Edit ParentPereMere</h1>
+
+    {{ include('parent_pere_mere/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('parent_pere_mere_index') }}">back to list</a>
+
+    {{ include('parent_pere_mere/_delete_form.html.twig') }}
+{% endblock %}
