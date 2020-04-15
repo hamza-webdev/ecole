@@ -100,7 +100,7 @@ class ParentPereMere
     private $situation_Familiale;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Eleve", mappedBy="parent_p1_p2")
+     * @ORM\OneToMany(targetEntity="App\Entity\Eleve", mappedBy="parent_p1_p2", cascade={"persist", "remove"})
      */
     private $eleves;
 
@@ -334,7 +334,7 @@ class ParentPereMere
         return $this->eleves;
     }
 
-    public function addElefe(Eleve $elefe): self
+    public function addEleves(Eleve $elefe): self
     {
         if (!$this->eleves->contains($elefe)) {
             $this->eleves[] = $elefe;
@@ -344,7 +344,7 @@ class ParentPereMere
         return $this;
     }
 
-    public function removeElefe(Eleve $elefe): self
+    public function removeEleves(Eleve $elefe): self
     {
         if ($this->eleves->contains($elefe)) {
             $this->eleves->removeElement($elefe);
@@ -359,6 +359,6 @@ class ParentPereMere
 
     public function __toString()
     {
-        return $this->getNameP1();
+        return $this->getNameP1().' '.$this->getPrenomP1().' - '.$this->getNameP2().' '.$this->getPrenomP2();
     }
 }

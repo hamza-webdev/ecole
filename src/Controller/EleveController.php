@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Classeroom;
 use App\Entity\Eleve;
 use App\Form\EleveType;
 use App\Repository\EleveRepository;
@@ -27,10 +28,13 @@ class EleveController extends AbstractController
 
     /**
      * @Route("/new", name="eleve_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
         $eleve = new Eleve();
+
         $form = $this->createForm(EleveType::class, $eleve);
         $form->handleRequest($request);
 

@@ -27,8 +27,8 @@
                 <td>{{ eleve.email }}</td>
                 <td>{{ eleve.telephone }}</td>
                 <td>
-                    <a href="{{ path('eleve_show', {'id': eleve.id}) }}">show</a>
-                    <a href="{{ path('eleve_edit', {'id': eleve.id}) }}">edit</a>
+                    <a href="{{ path('eleve_show', {'id': eleve.id}) }}" class="btn btn-info">show</a>
+                    <a href="{{ path('eleve_edit', {'id': eleve.id}) }}" class="btn btn-success">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -39,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('eleve_new') }}">Create new</a>
+    <a href="{{ path('eleve_new') }}" class="btn btn-primary">Create new</a>
 {% endblock %}

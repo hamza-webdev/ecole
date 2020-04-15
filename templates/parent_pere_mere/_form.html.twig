@@ -1,4 +1,70 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{#    {{ form_widget(form) }}#}
+<div class="alert alert-danger" role="alert">
+    {{ form_errors(form) }}
+</div>
+
+<div class="bd-callout bd-callout-warning">
+    <div class="row ">
+        <div class="col-md-2">
+            {{ form_row(form.civilite) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(form.name_p1) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(form.prenom_p1) }}
+        </div>
+        </div>
+    <div class="row ">
+        <div class="col-md-5">
+            <i class="fa fa-calendar"></i>  {{ form_row(form.email_p1) }}
+        </div>
+        <div class="col-md-3">
+            <i class="fa fa-calendar"></i>  {{ form_row(form.telephone_p1) }}
+        </div>
+        <div class="col-md-2">
+            <i class="fa fa-calendar"></i>  {{ form_row(form.sexe_p1) }}
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-2">
+            {{ form_row(form.civilite_p2) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(form.name_p2) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(form.prenom_p2) }}
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-5">
+            <i class="fa fa-calendar"></i>  {{ form_row(form.email_p2) }}
+        </div>
+        <div class="col-md-3">
+            <i class="fa fa-calendar"></i>  {{ form_row(form.telephone_p2) }}
+        </div>
+        <div class="col-md-2">
+            <i class="fa fa-calendar"></i>  {{ form_row(form.sexe_p2) }}
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-5">
+            <i class="fa fa-calendar"></i>  {{ form_row(form.adresse_p2) }}
+        </div>
+        <div class="col-md-3">
+            <i class="fa fa-calendar"></i>  {{ form_row(form.situation_Familiale) }}
+        </div>
+        <div class="col-md-4">
+            <i class="fa fa-calendar"></i>  {{ form_row(form.eleves) }}
+        </div>
+    </div>
+
+</div>
+
+{{ form_rest(form) }}
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

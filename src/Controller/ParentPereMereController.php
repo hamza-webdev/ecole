@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/parent/pere/mere")
+ * @Route("/parent_peremere")
  */
 class ParentPereMereController extends AbstractController
 {

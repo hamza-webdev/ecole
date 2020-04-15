@@ -1,4 +1,62 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="alert alert-danger" role="alert">
+    {{ form_errors(form) }}
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        {{ form_row(form.name) }}
+    </div>
+    <div class="col-md-4">
+        {{ form_row(form.prenom) }}
+    </div>
+    <div class="col-md-4">
+        <i class="fa fa-calendar"></i>  {{ form_row(form.dateNaissance) }}
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        {{ form_row(form.email) }}
+    </div>
+    <div class="col-md-3">
+        {{ form_row(form.telephone) }}
+    </div>
+    <div class="col-md-2">
+        {{ form_row(form.sexe) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        {{ form_label(form.parent_p1_p2, 'Parent de cet eleve') }}{{ form_row(form.parent_p1_p2) }}
+    </div>
+    <div class="col-5">
+    <a href="{{ path('parent_pere_mere_new') }}" type="button" class="float-left btn btn-warning " style="
+    height: 45px;
+    margin-top: 30px;
+    font-size: 13px;
+">Créer fiche des parents pour cette eleve</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5" id="classeromm_list" >
+        {{ form_row(form.classeroom) }}
+
+
+    </div>
+    <div class="col-5">
+        <a href="{{ path('classeroom_new') }}" type="button" class="float-left btn btn-warning " style="
+    height: 45px;
+    margin-top: 30px;
+    font-size: 13px;
+">Créer Nouveau classerrom</a>
+    </div>
+</div>
+
+{#    {{ form_widget(form) }}#}
+    <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+
+
 {{ form_end(form) }}

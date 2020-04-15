@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Eleve;
 use App\Entity\ParentPereMere;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -22,11 +24,14 @@ class ParentPereMereType extends AbstractType
             ->add('telephone_p2')
             ->add('sexe_p1')
             ->add('civilite')
-            ->add('user')
+//            ->add('user')
             ->add('sexe_p2')
             ->add('adresse_p2')
             ->add('civilite_p2')
             ->add('situation_Familiale')
+            ->add('eleves', EntityType::class, [
+                    'class' => Eleve::class
+            ])
         ;
     }
 

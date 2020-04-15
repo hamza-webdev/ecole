@@ -49,8 +49,8 @@ class Eleve
     private $sexe;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="eleve", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="eleve")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $user;
 
@@ -72,6 +72,7 @@ class Eleve
     public function __construct()
     {
         $this->noteExaminEleves = new ArrayCollection();
+//        $this->classeroom = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -194,6 +195,16 @@ class Eleve
         return $this;
     }
 
+//    public function addClasseroom(Classeroom $classerooms): self
+////    {
+////        if (!$this->classeroom->contains($classerooms)) {
+////            $this->classeroom[] = $classerooms;
+////            $classerooms->setEleve($this);
+////        }
+//
+//        return $this;
+//    }
+
     public function getParentP1P2(): ?ParentPereMere
     {
         return $this->parent_p1_p2;
@@ -211,6 +222,10 @@ class Eleve
         return $this->classeroom;
     }
 
+    /**
+     * @param Classeroom|null $classeroom
+     * @return $this
+     */
     public function setClasseroom(?Classeroom $classeroom): self
     {
         $this->classeroom = $classeroom;

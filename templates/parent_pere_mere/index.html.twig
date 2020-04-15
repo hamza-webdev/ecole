@@ -33,8 +33,8 @@
                 <td>{{ parent_pere_mere.emailP2 }}</td>
                 <td>{{ parent_pere_mere.telephoneP2 }}</td>
                 <td>
-                    <a href="{{ path('parent_pere_mere_show', {'id': parent_pere_mere.id}) }}">show</a>
-                    <a href="{{ path('parent_pere_mere_edit', {'id': parent_pere_mere.id}) }}">edit</a>
+                    <a href="{{ path('parent_pere_mere_show', {'id': parent_pere_mere.id}) }}" class="btn btn-info">show</a>
+                    <a href="{{ path('parent_pere_mere_edit', {'id': parent_pere_mere.id}) }}" class="btn btn-success">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -45,5 +45,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('parent_pere_mere_new') }}">Create new</a>
+    <a href="{{ path('parent_pere_mere_new') }}" class="btn btn-primary">Create new</a>
 {% endblock %}
