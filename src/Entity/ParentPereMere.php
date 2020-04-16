@@ -100,7 +100,7 @@ class ParentPereMere
     private $adresse_p1;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Eleve", mappedBy="parent_p1_p2", cascade={"persist, "remove""})
+     * @ORM\OneToMany(targetEntity="App\Entity\Eleve", mappedBy="parent_p1_p2", cascade={"persist", "remove"})
      */
     private $eleves;
 

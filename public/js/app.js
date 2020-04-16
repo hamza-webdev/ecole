@@ -37,7 +37,7 @@ function addNewForm() {
      var newForm = prototype;
       newForm = newForm.replace(/__name__/g, index);
 
-     $collectionHolder.data('index', index++);
+     $collectionHolder.data('index', index+1);
      // create the panel
     var $panel = $('<div class="panel panel-warning border border-primary ml-4 p-3 rounded"><div class="panel-heading"></div></div>')
 
