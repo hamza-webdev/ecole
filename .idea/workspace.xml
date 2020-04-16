@@ -2,29 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="712ee6f6-d2e6-49da-8b40-75b4685934bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EleveController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EleveController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ParentPereMereController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ParentPereMereController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Eleve.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Eleve.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/ParentPereMere.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ParentPereMere.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ClasseroomType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ClasseroomType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/EleveType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EleveType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/ParentPereMereType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ParentPereMereType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/eleve/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eleve/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/eleve/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eleve/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/eleve/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eleve/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/eleve/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eleve/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/eleve/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eleve/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/parent_pere_mere/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/parent_pere_mere/_delete_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/parent_pere_mere/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/parent_pere_mere/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/parent_pere_mere/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/parent_pere_mere/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/parent_pere_mere/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/parent_pere_mere/new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,9 +156,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="CSS" />
-    <property name="last_opened_file_path" value="C:/wamp64/bin/php/php7.3.12/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.PHP" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\ecole2\public\css" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -186,7 +176,8 @@
       <option name="presentableId" value="Default" />
       <updated>1586783913360</updated>
       <workItem from="1586784022109" duration="154000" />
-      <workItem from="1586784221636" duration="42266000" />
+      <workItem from="1586784221636" duration="52503000" />
+      <workItem from="1587046661141" duration="3987000" />
     </task>
     <servers />
   </component>
@@ -210,10 +201,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="141" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586785107356" />
-    <state x="599" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1586784791801">
+    <state x="599" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1587046664353">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="599" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586784791801" />
+    <state x="599" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587046664353" />
     <state x="496" y="345" width="731" height="674" key="find.popup" timestamp="1586866276853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

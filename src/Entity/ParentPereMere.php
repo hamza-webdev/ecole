@@ -44,11 +44,6 @@ class ParentPereMere
     private $telephone_p1;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Adresse", mappedBy="adresse_p1")
-     */
-    private $adresse_p1;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Civilite", inversedBy="civilte_p1")
      */
     private $civilite;
@@ -100,7 +95,12 @@ class ParentPereMere
     private $situation_Familiale;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Eleve", mappedBy="parent_p1_p2", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="App\Entity\Adresse", mappedBy="adresse_p1")
+     */
+    private $adresse_p1;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Eleve", mappedBy="parent_p1_p2", cascade={"persist"})
      */
     private $eleves;
 
@@ -334,24 +334,25 @@ class ParentPereMere
         return $this->eleves;
     }
 
-    public function addEleves(Eleve $elefe): self
+    public function addEleve(Eleve $elefe): self
     {
         if (!$this->eleves->contains($elefe)) {
-            $this->eleves[] = $elefe;
+//            $this->eleves[] = $elefe;
+            $this->eleves->add($elefe) ;
             $elefe->setParentP1P2($this);
         }
 
-        return $this;
+        return $this->eleves->add($elefe);
     }
 
-    public function removeEleves(Eleve $elefe): self
+    public function removeEleve(Eleve $elefe): self
     {
         if ($this->eleves->contains($elefe)) {
             $this->eleves->removeElement($elefe);
             // set the owning side to null (unless already changed)
-            if ($elefe->getParentP1P2() === $this) {
-                $elefe->setParentP1P2(null);
-            }
+//            if ($elefe->getParentP1P2() === $this) {
+//                $elefe->setParentP1P2(null);
+//            }
         }
 
         return $this;

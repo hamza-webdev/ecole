@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Eleve;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -18,29 +19,29 @@ class EleveType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'attr' => [
-                'placeholder' => 'Saisir le nom'
+                'placeholder' => 'Saisir le nom d\'enfant'
                 ]
             ])
             ->add('prenom', TextType::class, [
                 'attr' => [
-                'placeholder' => 'Saisir le prenom'
+                'placeholder' => 'Saisir le prenom d\'enfant'
                 ]
             ])
-            ->add('dateNaissance', DateType::class, [
-                'widget' =>'single_text'
+            ->add('dateNaissance', BirthdayType::class, [
+//                'widget' =>'single_text'
             ])
-            ->add('email', EmailType::class, [
-                'attr' => [
-                'placeholder' => 'Saisir un mail valide!'
-                ]
-            ])
-            ->add('telephone', NumberType::class, [
-                'attr' => [
-                'placeholder' => 'Saisir un téléphone!'
-                ]
-            ])
+//            ->add('email', EmailType::class, [
+//                'attr' => [
+//                'placeholder' => 'Saisir un mail valide d\'enfant!'
+//                ]
+//            ])
+//            ->add('telephone', NumberType::class, [
+//                'attr' => [
+//                'placeholder' => 'Saisir un téléphone!'
+//                ]
+//            ])
             ->add('sexe', NULL, [
-                'placeholder' => 'Saisir le sexe!'
+                'placeholder' => 'Saisir le sexe d\'enfant!'
             ])
 //            ->add('user')
                 /*
@@ -54,13 +55,13 @@ class EleveType extends AbstractType
                 'allow_delete' => true
             ])
                  */
-            ->add('parent_p1_p2', NULL, [
-                'help' => 'Si le nom de parent n\'éxiste pas, vous pouvez le creer!',
-                'placeholder' => 'Selection un parent',
-                'label' => false
-            ])
+//            ->add('parent_p1_p2', NULL, [
+//                'help' => 'Si le nom de parent n\'éxiste pas, vous pouvez le creer!',
+//                'placeholder' => 'Selection un parent',
+//                'label' => false
+//            ])
             ->add('classeroom', null, [
-                'placeholder' => 'Saisir le nom de la classe'
+                'placeholder' => 'Saisir le nom de la classe d\'enfant'
             ])
         ;
     }
