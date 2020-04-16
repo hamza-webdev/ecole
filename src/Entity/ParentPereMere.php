@@ -100,7 +100,7 @@ class ParentPereMere
     private $adresse_p1;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Eleve", mappedBy="parent_p1_p2", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\Eleve", mappedBy="parent_p1_p2", cascade={"persist, "remove""})
      */
     private $eleves;
 
@@ -342,7 +342,7 @@ class ParentPereMere
             $elefe->setParentP1P2($this);
         }
 
-        return $this->eleves->add($elefe);
+        return $this;
     }
 
     public function removeEleve(Eleve $elefe): self

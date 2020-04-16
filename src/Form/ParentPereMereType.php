@@ -7,6 +7,7 @@ use App\Entity\ParentPereMere;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -39,8 +40,11 @@ class ParentPereMereType extends AbstractType
                 'allow_add' => true,
                 'by_reference' => false,
                 'allow_delete' => true
-            ]);
+            ])
+            ->add('save', SubmitType::class)
         ;
+
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

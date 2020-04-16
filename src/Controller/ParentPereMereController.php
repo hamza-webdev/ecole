@@ -32,16 +32,38 @@ class ParentPereMereController extends AbstractController
     /**
      * @Route("/new", name="parent_pere_mere_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $parentPereMere = new ParentPereMere();
         $elev = new Eleve();
-        $parentPereMere->getEleves()->add($elev);
+        $originalEleves = new ArrayCollection();
+
+        // Create an ArrayCollection of the current Tag objects in the database
+        foreach ($parentPereMere->getEleves() as $eleve) {
+            $originalEleves->add($eleve);
+        }
         $form = $this->createForm(ParentPereMereType::class, $parentPereMere);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
+//            $entityManager = $this->getDoctrine()->getManager();
+            foreach ($originalEleves as $eleve) {
+                if (false === $parentPereMere->getEleves()->contains($eleve)) {
+                    // remove the Task from the Tag
+                    if (false === $parentPereMere->getEleves()->contains($eleve)) {
+                    $parentPereMere->getEleves()->removeElement($parentPereMere);
+
+                    // if it was a many-to-one relationship, remove the relationship like this
+                    // $tag->setTask(null);
+
+                    $entityManager->persist($eleve);
+
+                    // if you wanted to delete the Tag entirely, you can also do that
+                    // $entityManager->remove($tag);
+                    }
+                }
+            }
+
             $entityManager->persist($parentPereMere);
             $entityManager->flush();
 
@@ -69,8 +91,8 @@ class ParentPereMereController extends AbstractController
      */
     public function edit(Request $request, ParentPereMere $parentPereMere, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(ParentPereMereType::class, $parentPereMere);
-        $form->handleRequest($request);
+//        $form = $this->createForm(ParentPereMereType::class, $parentPereMere);
+//        $form->handleRequest($request);
 
         if (null === $parentPereMere) {
             throw $this->createNotFoundException('No task found for id '.$request->get('id'));
@@ -91,7 +113,7 @@ class ParentPereMereController extends AbstractController
             foreach ($originalEleves as $eleve) {
                 if (false === $parentPereMere->getEleves()->contains($eleve)) {
                     // remove the Task from the Tag
-                    $parentPereMere->getTasks()->removeElement($parentPereMere);
+                    $parentPereMere->getEleves()->removeElement($parentPereMere);
 
                     // if it was a many-to-one relationship, remove the relationship like this
                     // $tag->setTask(null);
@@ -117,7 +139,7 @@ class ParentPereMereController extends AbstractController
 
         return $this->render('parent_pere_mere/edit.html.twig', [
             'parent_pere_mere' => $parentPereMere,
-            'form' => $form->createView(),
+            'form' => $editForm->createView(),
         ]);
     }
 

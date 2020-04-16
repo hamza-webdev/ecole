@@ -1,67 +1,76 @@
 var $collectionHolder;
 
 // setup an "add a tag" link
-var $addTagButton = $('<button type="button" class="add_eleve_link">Add a tag</button>');
-var $newLinkLi = $('<li></li>').append($addTagButton);
+var $addNewItem = $('<a href="" class="btn btn-info">Add a item</a>');
 
-jQuery(document).ready(function() {
-    // Get the ul that holds the collection of tags
-    $collectionHolder = $('ul.eleves');
+$(document).ready(function() {
+    // Get the collection holder
+    $collectionHolder = $('#eleves_list');
 
-    // add the "add a tag" anchor and li to the tags ul
-    $collectionHolder.append($newLinkLi);
+    // append the add new item to the collectionholder
+    $collectionHolder.append($addNewItem);
 
-    // add a delete link to all of the existing tag form li elements
-    $collectionHolder.find('li').each(function() {
-        addEleveFormDeleteLink($(this));
+    // have the index for each panel we find it
+    $collectionHolder.data('index',$collectionHolder.find('.panel').length);
+
+   //add remove button to existing item
+    $collectionHolder.find('.panel').each(function () {
+        addRemoveButton($(this))
     });
 
-    // count the current form inputs we have (e.g. 2), use that as the new
-    // index when inserting a new item (e.g. 2)
-    $collectionHolder.data('index', $collectionHolder.find('input').length);
+    //  handle the click event for addNewItem
+    $addNewItem.click(function (e) {
+        e.preventDefault();
+        //create a new form and append it to the collectionholder
+        addNewForm();
+    })
 
-    $addTagButton.on('click', function(e) {
-        // add a new tag form (see next code block)
-        addEleveForm($collectionHolder, $newLinkLi);
-    });
 });
 
-function addEleveForm($collectionHolder, $newLinkLi) {
-    // Get the data-prototype explained earlier
+
+function addNewForm() {
+    // getting the prototype
     var prototype = $collectionHolder.data('prototype');
-
-    // get the new index
+    // get the index
     var index = $collectionHolder.data('index');
+    //create a form
+     var newForm = prototype;
+      newForm = newForm.replace(/__name__/g, index);
 
-    var newForm = prototype;
-    // You need this only if you didn't set 'label' => false in your tags field in TaskType
-    // Replace '__name__label__' in the prototype's HTML to
-    // instead be a number based on how many items we have
-    // newForm = newForm.replace(/__name__label__/g, index);
+     $collectionHolder.data('index', index++);
+     // create the panel
+    var $panel = $('<div class="panel panel-warning border border-primary ml-4 p-3 rounded"><div class="panel-heading"></div></div>')
 
-    // Replace '__name__' in the prototype's HTML to
-    // instead be a number based on how many items we have
-    newForm = newForm.replace(/__name__/g, index);
+    // create the panel-body and append newForm to it
+    var $panelBody = $('<div class="panel-body"></div>').append(newForm);
 
-    // increase the index with one for the next item
-    $collectionHolder.data('index', index + 1);
+    // append the panelBody to the panel parent
+    $panel.append($panelBody);
 
-    // Display the form in the page in an li, before the "Add a tag" link li
-    var $newFormLi = $('<li></li>').append(newForm);
-    $newLinkLi.before($newFormLi);
+    //append the the remove button to the new panel
+    addRemoveButton($panel);
 
-    // add a delete link to the new form
-    addTagFormDeleteLink($newFormLi);
+    // append the panel to the addNewItem
+    $addNewItem.before($panel);
+
 }
 
-function addTagFormDeleteLink($eleveFormLi) {
-    var $removeFormButton = $('<button type="button">Delete this Eleve</button>');
-    $eleveFormLi.append($removeFormButton);
+function addRemoveButton($panel) {
+    // create remove button
+    var $removeButton = $('<a href="#" class="btn btn-danger">Remove</a>');
 
-    $removeFormButton.on('click', function(e) {
-        // remove the li for the tag form
-        $eleveFormLi.remove();
+    var $panelFooter = $('<div class="panel-footer"></div>').append($removeButton);
+
+    //handle the click event of the remove button
+    $removeButton.click(function (e) {
+        e.preventDefault();
+        $(e.target).parents('.panel').slideUp(3000, function () {
+            $(this).remove();
+        })
     });
+
+    //append the footer to the panel
+    $panel.append($panelFooter);
 }
 
 

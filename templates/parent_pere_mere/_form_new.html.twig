@@ -60,52 +60,50 @@
         </div>
 
     </div>
-    <div class="col-sm-12 border-2" id="eleves_list" data-prototype="{{ form_widget(form.eleves.vars.prototype)|e('html_attr')}}" >
+    <div class="wel ml-8 border-2">
         <h3>Eleves</h3>
-            {% for eleve in form.eleves %}
-        <div class="panel panel-warning border border-primary ml-4 p-3 rounded">
-            <div class="panel-heading">
-            Eléve (enfant): {{ loop.index }}
-            </div>
-            <div class="panel-body">
+        <ul class="eleves" id="eleves_list" data-prototype="{{ form_widget(form.eleves.vars.prototype)|e('html_attr') }}">
+
+        {% for eleve in form.eleves %}
+            <div class="border border-primary ml-4 p-3 rounded">
+                <h3>Eléve (enfant): {{ loop.index }}</h3>
                 <div class="row">
                     <div class="col-md-3">
-                        {{ form_row(eleve.name) }}
+                      <li>  {{ form_row(eleve.name) }}</li>
                     </div>
                     <div class="col-md-3">
-                        {{ form_row(eleve.prenom) }}
+                        <li>  {{ form_row(eleve.prenom) }}
                     </div>
                     <div class="col-md-5">
-                        {{ form_row(eleve.dateNaissance) }}
+                        <li>    {{ form_row(eleve.dateNaissance) }}</li>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
-                        {{ form_row(eleve.sexe) }}
+                        <li>  {{ form_row(eleve.sexe) }}</li>
                     </div>
                     <div class="col-md-3">
-                        {{ form_row(eleve.classeroom) }}
+                        <li>   {{ form_row(eleve.classeroom) }}</li>
                     </div>
                 </div>
+
+
                 <div class="row d-none">
                     <div class="col-md-3 d-none">
-{#                        {{ form_row(eleve.telephone) }}#}
+                        {#                        {{ form_row(eleve.telephone) }}#}
 
-{#                        {{ form_row(eleve.email) }}#}
+                        {#                        {{ form_row(eleve.email) }}#}
 
-{#                        {{ form_row(eleve.parent_p1_p2) }}#}
+                        {#                        {{ form_row(eleve.parent_p1_p2) }}#}
                     </div>
                 </div>
             </div>
+        {% endfor %}
+        </ul>
 
-        </div>
-            {% endfor %}
-
-
-    </div>
-
+        <button type="button" class="btn btn-info add_eleve_link">Add a eleve</button>
 </div>
 
 {{ form_rest(form) }}
-{#    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>#}
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
