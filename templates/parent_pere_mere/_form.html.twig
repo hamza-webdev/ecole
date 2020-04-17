@@ -39,6 +39,9 @@
         <div class="col-md-3">
             {{ form_row(form.prenom_p1) }}
         </div>
+        <div class="col-md-2">
+            {{ form_row(form.situation_Familiale) }}
+        </div>
         </div>
     <div class="row bd-callout bd-callout-warning">
         <div class="col-md-5">
@@ -76,14 +79,38 @@
     </div>
 
     <div class="row bd-callout bd-callout-warning">
-        <div class="col-md-5">
-             {{ form_row(form.adresse_p1) }}
+        {% for adr in form.adresse_p1 %}
+           {% if adr is not null and adr is not empty %}
+        <div class="col-md-2">
+             {{ form_row(adr.numero) }}
+         </div>
+        <div class="col-md-4">
+            {{ form_row(adr.adresse)}}
+        </div>
+        <div class="col-md-2">
+            {{ form_row(adr.cp) }}
         </div>
         <div class="col-md-3">
-             {{ form_row(form.situation_Familiale) }}
+            {{ form_row(adr.ville) }}
         </div>
+            {% endif %}
+        {% endfor %}
+
+{#        <div class="col-md-2">#}
+{#             {{ form_row(form.adresse_p1.numero) }}#}
+{#        </div>#}
+{#        <div class="col-md-3">#}
+{#             {{ form_row(form.adresse_p1.adresse) }}#}
+{#        </div>#}
+{#        <div class="col-md-2">#}
+{#            {{ form_row(form.adresse_p1.cp) }}#}
+{#        </div>#}
+{#        <div class="col-md-2">#}
+{#            {{ form_row(form.adresse_p1.ville) }}#}
+{#        </div>#}
 
     </div>
+
     <div class="col-sm-12 border-2" id="eleves_list" data-prototype="{{ formMacros.myLookForm(form.eleves.vars.prototype)|e('html_attr')}}" >
         <h3>Eleves</h3>
             {% for eleve in form.eleves %}

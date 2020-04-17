@@ -41,10 +41,6 @@ class Adresse
      */
     private $adresse_p1;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\ParentPereMere", mappedBy="adresse_p2", cascade={"persist", "remove"})
-     */
-    private $adresse_p2;
 
     public function getId(): ?int
     {
@@ -110,8 +106,6 @@ class Adresse
 
         return $this;
     }
-
-   0
 
     public function __toString()
     {

@@ -39,6 +39,9 @@ class ParentPereMereController extends AbstractController
         $elev = new Eleve();
         $originalEleves = new ArrayCollection();
 
+        $adresse = new Adresse();
+        $parentPereMere->addAdresseP1($adresse);
+
         // Create an ArrayCollection of the current Tag objects in the database
         foreach ($parentPereMere->getEleves() as $eleve) {
             $originalEleves->add($eleve);

@@ -48,11 +48,11 @@ class ParentPereMere
      */
     private $civilite;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="parent_1", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $user;
+//    /**
+//     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="parent_1", cascade={"persist", "remove"})
+//     * @ORM\JoinColumn(nullable=false)
+//     */
+//    private $user;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -79,10 +79,10 @@ class ParentPereMere
      */
     private $telephone_p2;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Adresse", inversedBy="adresse_p2", cascade={"persist", "remove"})
-     */
-    private $adresse_p2;
+//    /**
+//     * @ORM\OneToOne(targetEntity="App\Entity\Adresse", inversedBy="adresse_p2", cascade={"persist", "remove"})
+//     */
+//    private $adresse_p2;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Civilite", inversedBy="parent_p2")
@@ -218,17 +218,17 @@ class ParentPereMere
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
+//    public function getUser(): ?User
+//    {
+//        return $this->user;
+//    }
+//
+//    public function setUser(User $user): self
+//    {
+//        $this->user = $user;
+//
+//        return $this;
+//    }
 
     public function getNameP2(): ?string
     {

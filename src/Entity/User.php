@@ -38,7 +38,7 @@ class User implements UserInterface
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\ParentPereMere", mappedBy="user", cascade={"persist", "remove"})
      */
-    private $parent_1;
+//    private $parent_1;
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Eleve", mappedBy="user", cascade={"persist", "remove"})
@@ -123,22 +123,22 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getParent1(): ?ParentPereMere
-    {
-        return $this->parent_1;
-    }
-
-    public function setParent1(ParentPereMere $parent_1): self
-    {
-        $this->parent_1 = $parent_1;
-
-        // set the owning side of the relation if necessary
-        if ($parent_1->getUser() !== $this) {
-            $parent_1->setUser($this);
-        }
-
-        return $this;
-    }
+//    public function getParent1(): ?ParentPereMere
+//    {
+//        return $this->parent_1;
+//    }
+//
+//    public function setParent1(ParentPereMere $parent_1): self
+//    {
+//        $this->parent_1 = $parent_1;
+//
+//        // set the owning side of the relation if necessary
+//        if ($parent_1->getUser() !== $this) {
+//            $parent_1->setUser($this);
+//        }
+//
+//        return $this;
+//    }
 
     public function getEleve(): ?Eleve
     {
