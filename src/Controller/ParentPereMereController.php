@@ -113,12 +113,13 @@ class ParentPereMereController extends AbstractController
             foreach ($originalEleves as $eleve) {
                 if (false === $parentPereMere->getEleves()->contains($eleve)) {
                     // remove the Task from the Tag
-                    $parentPereMere->getEleves()->removeElement($parentPereMere);
+                    $entityManager->remove($eleve);
+//                    $parentPereMere->getEleves()->removeElement($eleve);
 
                     // if it was a many-to-one relationship, remove the relationship like this
                     // $tag->setTask(null);
 
-                    $entityManager->persist($eleve);
+//                    $entityManager->persist($eleve);
 
                     // if you wanted to delete the Tag entirely, you can also do that
                     // $entityManager->remove($tag);

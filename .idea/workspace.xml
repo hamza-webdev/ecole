@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="712ee6f6-d2e6-49da-8b40-75b4685934bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ParentPereMere.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ParentPereMere.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ParentPereMereController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ParentPereMereController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +174,7 @@
       <updated>1586783913360</updated>
       <workItem from="1586784022109" duration="154000" />
       <workItem from="1586784221636" duration="52503000" />
-      <workItem from="1587046661141" duration="16345000" />
+      <workItem from="1587046661141" duration="17554000" />
     </task>
     <servers />
   </component>
