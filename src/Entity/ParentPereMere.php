@@ -95,7 +95,7 @@ class ParentPereMere
     private $situation_Familiale;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Adresse", mappedBy="adresse_p1")
+     * @ORM\OneToMany(targetEntity="App\Entity\Adresse", mappedBy="adresse_p1", cascade={"persist", "remove"})
      */
     private $adresse_p1;
 

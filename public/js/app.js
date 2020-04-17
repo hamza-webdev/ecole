@@ -1,7 +1,7 @@
 var $collectionHolder;
 
 // setup an "add a tag" link
-var $addNewItem = $('<a href="" class="btn btn-info">Add a item</a>');
+var $addNewItem = $('<a href="" class="btn btn-info mb-2">Add a item</a>');
 
 $(document).ready(function() {
     // Get the collection holder
@@ -64,7 +64,7 @@ function addRemoveButton($panel) {
     //handle the click event of the remove button
     $removeButton.click(function (e) {
         e.preventDefault();
-        $(e.target).parents('.panel').slideUp(3000, function () {
+        $(e.target).parents('.panel').slideUp(1000, function () {
             $(this).remove();
         })
     });

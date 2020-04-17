@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Adresse;
 use App\Entity\Eleve;
 use App\Entity\ParentPereMere;
 use App\Form\ParentPereMereType;
@@ -98,7 +99,9 @@ class ParentPereMereController extends AbstractController
             throw $this->createNotFoundException('No task found for id '.$request->get('id'));
         }
         $originalEleves = new ArrayCollection();
+        $adresse = new Adresse();
 
+        $parentPereMere->addAdresseP1($adresse);
         // Create an ArrayCollection of the current Tag objects in the database
         foreach ($parentPereMere->getEleves() as $eleve) {
             $originalEleves->add($eleve);

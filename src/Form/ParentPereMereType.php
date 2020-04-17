@@ -28,7 +28,13 @@ class ParentPereMereType extends AbstractType
             ->add('civilite')
 //            ->add('user')
             ->add('sexe_p2')
-            ->add('adresse_p2')
+            ->add('adresse_p1', CollectionType::class, [
+                'entry_type' => AdresseType::class,
+                'entry_options' => ['label' => false],
+                'allow_add' => true,
+                'by_reference' => false,
+                'allow_delete' => true
+            ])
             ->add('civilite_p2')
             ->add('situation_Familiale')
 //            ->add('eleves', EntityType::class, [

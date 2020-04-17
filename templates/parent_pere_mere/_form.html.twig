@@ -1,5 +1,29 @@
 {{ form_start(form) }}
-{#    {{ form_widget(form) }}#}
+
+{% macro mylookForm(eleve) %}
+    <div class="row">
+        <div class="col-md-3">
+            {{ form_row(eleve.name) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(eleve.prenom) }}
+        </div>
+        <div class="col-md-5">
+            {{ form_row(eleve.dateNaissance) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            {{ form_row(eleve.sexe) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(eleve.classeroom) }}
+        </div>
+    </div>
+{% endmacro mylookForm %}
+{%  import _self as formMacros %}
+
+
 <div class="alert alert-danger" role="alert">
     {{ form_errors(form) }}
 </div>
@@ -53,14 +77,14 @@
 
     <div class="row bd-callout bd-callout-warning">
         <div class="col-md-5">
-             {{ form_row(form.adresse_p2) }}
+             {{ form_row(form.adresse_p1) }}
         </div>
         <div class="col-md-3">
              {{ form_row(form.situation_Familiale) }}
         </div>
 
     </div>
-    <div class="col-sm-12 border-2" id="eleves_list" data-prototype="{{ form_widget(form.eleves.vars.prototype)|e('html_attr')}}" >
+    <div class="col-sm-12 border-2" id="eleves_list" data-prototype="{{ formMacros.myLookForm(form.eleves.vars.prototype)|e('html_attr')}}" >
         <h3>Eleves</h3>
             {% for eleve in form.eleves %}
         <div class="panel panel-warning border border-primary ml-4 p-3 rounded">
@@ -68,34 +92,8 @@
             Eléve (enfant): {{ loop.index }}
             </div>
             <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-3">
-                        {{ form_row(eleve.name) }}
-                    </div>
-                    <div class="col-md-3">
-                        {{ form_row(eleve.prenom) }}
-                    </div>
-                    <div class="col-md-5">
-                        {{ form_row(eleve.dateNaissance) }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        {{ form_row(eleve.sexe) }}
-                    </div>
-                    <div class="col-md-3">
-                        {{ form_row(eleve.classeroom) }}
-                    </div>
-                </div>
-                <div class="row d-none">
-                    <div class="col-md-3 d-none">
-{#                        {{ form_row(eleve.telephone) }}#}
+                {{ formMacros.myLookForm(eleve) }}
 
-{#                        {{ form_row(eleve.email) }}#}
-
-{#                        {{ form_row(eleve.parent_p1_p2) }}#}
-                    </div>
-                </div>
             </div>
 
         </div>

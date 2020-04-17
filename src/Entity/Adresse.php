@@ -111,23 +111,7 @@ class Adresse
         return $this;
     }
 
-    public function getAdresseP2(): ?ParentPereMere
-    {
-        return $this->adresse_p2;
-    }
-
-    public function setAdresseP2(?ParentPereMere $adresse_p2): self
-    {
-        $this->adresse_p2 = $adresse_p2;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newAdresse_p2 = null === $adresse_p2 ? null : $this;
-        if ($adresse_p2->getAdresseP2() !== $newAdresse_p2) {
-            $adresse_p2->setAdresseP2($newAdresse_p2);
-        }
-
-        return $this;
-    }
+   0
 
     public function __toString()
     {
